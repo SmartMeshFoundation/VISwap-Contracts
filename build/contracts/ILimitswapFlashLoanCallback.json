@@ -1,0 +1,371 @@
+{
+  "contractName": "ILimitswapFlashLoanCallback",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee0",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fee1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "flashLoanCallback",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"fee0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fee1\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"flashLoanCallback\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/UBL/viswap/contracts/interfaces/ILimitswapFlashLoanCallback.sol\":\"ILimitswapFlashLoanCallback\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/UBL/viswap/contracts/interfaces/ILimitswapFlashLoanCallback.sol\":{\"keccak256\":\"0xca719452798928ea6d8f9ab43ed62930d61655d1ecef3137e42b32b881ce37ea\",\"license\":\"GPL 2.0\",\"urls\":[\"bzz-raw://29ffffb5cc5c9383ad1a942b8b556e4f49f057568e0ef18f3f92fcc5fa69d578\",\"dweb:/ipfs/QmecbewA4CLjNKom6sU15dXxbWkRLJ5h5a8UogQ3VZGiZ4\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL 2.0\r\npragma solidity =0.7.6;\r\n\r\ninterface ILimitswapFlashLoanCallback {\r\n    function flashLoanCallback(uint256 fee0, uint256 fee1, bytes calldata data) external;\r\n}\r\n",
+  "sourcePath": "E:/UBL/viswap/contracts/interfaces/ILimitswapFlashLoanCallback.sol",
+  "ast": {
+    "absolutePath": "/E/UBL/viswap/contracts/interfaces/ILimitswapFlashLoanCallback.sol",
+    "exportedSymbols": {
+      "ILimitswapFlashLoanCallback": [
+        3634
+      ]
+    },
+    "id": 3635,
+    "license": "GPL 2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3624,
+        "literals": [
+          "solidity",
+          "=",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:23:6"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3634,
+        "linearizedBaseContracts": [
+          3634
+        ],
+        "name": "ILimitswapFlashLoanCallback",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "097b90fb",
+            "id": 3633,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "flashLoanCallback",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3626,
+                  "mutability": "mutable",
+                  "name": "fee0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3633,
+                  "src": "136:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3625,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "136:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3628,
+                  "mutability": "mutable",
+                  "name": "fee1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3633,
+                  "src": "150:12:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3627,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "150:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3630,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3633,
+                  "src": "164:19:6",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3629,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "164:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "135:49:6"
+            },
+            "returnParameters": {
+              "id": 3632,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "193:0:6"
+            },
+            "scope": 3634,
+            "src": "109:85:6",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3635,
+        "src": "64:133:6"
+      }
+    ],
+    "src": "37:162:6"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/E/UBL/viswap/contracts/interfaces/ILimitswapFlashLoanCallback.sol",
+      "exportedSymbols": {
+        "ILimitswapFlashLoanCallback": [
+          3634
+        ]
+      },
+      "license": "GPL 2.0"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "=",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 3624,
+        "name": "PragmaDirective",
+        "src": "37:23:6"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            3634
+          ],
+          "name": "ILimitswapFlashLoanCallback",
+          "scope": 3635
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "097b90fb",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "flashLoanCallback",
+              "scope": 3634,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "fee0",
+                      "scope": 3633,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3625,
+                        "name": "ElementaryTypeName",
+                        "src": "136:7:6"
+                      }
+                    ],
+                    "id": 3626,
+                    "name": "VariableDeclaration",
+                    "src": "136:12:6"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "fee1",
+                      "scope": 3633,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3627,
+                        "name": "ElementaryTypeName",
+                        "src": "150:7:6"
+                      }
+                    ],
+                    "id": 3628,
+                    "name": "VariableDeclaration",
+                    "src": "150:12:6"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "scope": 3633,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 3629,
+                        "name": "ElementaryTypeName",
+                        "src": "164:5:6"
+                      }
+                    ],
+                    "id": 3630,
+                    "name": "VariableDeclaration",
+                    "src": "164:19:6"
+                  }
+                ],
+                "id": 3631,
+                "name": "ParameterList",
+                "src": "135:49:6"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3632,
+                "name": "ParameterList",
+                "src": "193:0:6"
+              }
+            ],
+            "id": 3633,
+            "name": "FunctionDefinition",
+            "src": "109:85:6"
+          }
+        ],
+        "id": 3634,
+        "name": "ContractDefinition",
+        "src": "64:133:6"
+      }
+    ],
+    "id": 3635,
+    "name": "SourceUnit",
+    "src": "37:162:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-06-16T07:50:10.731Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

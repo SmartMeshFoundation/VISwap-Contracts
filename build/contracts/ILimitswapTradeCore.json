@@ -1,0 +1,956 @@
+{
+  "contractName": "ILimitswapTradeCore",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "buyside",
+          "type": "bool"
+        },
+        {
+          "internalType": "int24",
+          "name": "stopTick",
+          "type": "int24"
+        }
+      ],
+      "name": "tradeStartGate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deepBurned",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint160",
+          "name": "sqrtPriceX96",
+          "type": "uint160"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int24",
+          "name": "tick",
+          "type": "int24"
+        },
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "share",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isSellShare",
+          "type": "bool"
+        }
+      ],
+      "name": "getLimitTokensCode",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "token0Out",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token1Out",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"int24\",\"name\":\"tick\",\"type\":\"int24\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"share\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isSellShare\",\"type\":\"bool\"}],\"name\":\"getLimitTokensCode\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"token0Out\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token1Out\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"buyside\",\"type\":\"bool\"},{\"internalType\":\"int24\",\"name\":\"stopTick\",\"type\":\"int24\"}],\"name\":\"tradeStartGate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deepBurned\",\"type\":\"uint256\"},{\"internalType\":\"uint160\",\"name\":\"sqrtPriceX96\",\"type\":\"uint160\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/UBL/viswap/contracts/interfaces/ILimitswapTradeCore.sol\":\"ILimitswapTradeCore\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/UBL/viswap/contracts/interfaces/ILimitswapTradeCore.sol\":{\"keccak256\":\"0x6c44af7559348e39092bf180dab3c77c72d11bc41b03fc446ab6c2c7e314f9ad\",\"license\":\"GPL 2.0\",\"urls\":[\"bzz-raw://1b507e2c41c9050a9b11e4418d728f69e0750888856683ae3df19414cda76ef5\",\"dweb:/ipfs/QmcbvSY4DLDSS1xeP7dYgSCRRL5rx1yWxvnz1oVaPpnRBJ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL 2.0\r\npragma solidity >=0.5.0;\r\n\r\ninterface ILimitswapTradeCore {\r\n    function tradeStartGate(uint256 amountIn, bool buyside, int24 stopTick) external returns (uint256 amountOut, uint256 deepBurned, uint160 sqrtPriceX96);\r\n    function getLimitTokensCode (int24 tick, address user, uint256 share, bool isSellShare) external view returns(uint256 token0Out, uint256 token1Out);\r\n}\r\n",
+  "sourcePath": "E:/UBL/viswap/contracts/interfaces/ILimitswapTradeCore.sol",
+  "ast": {
+    "absolutePath": "/E/UBL/viswap/contracts/interfaces/ILimitswapTradeCore.sol",
+    "exportedSymbols": {
+      "ILimitswapTradeCore": [
+        3765
+      ]
+    },
+    "id": 3766,
+    "license": "GPL 2.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3734,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:24:9"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3765,
+        "linearizedBaseContracts": [
+          3765
+        ],
+        "name": "ILimitswapTradeCore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "02ea5e1f",
+            "id": 3749,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tradeStartGate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3736,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3749,
+                  "src": "126:16:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3735,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "126:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3738,
+                  "mutability": "mutable",
+                  "name": "buyside",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3749,
+                  "src": "144:12:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3737,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "144:4:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3740,
+                  "mutability": "mutable",
+                  "name": "stopTick",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3749,
+                  "src": "158:14:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3739,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:5:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "125:48:9"
+            },
+            "returnParameters": {
+              "id": 3748,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3743,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3749,
+                  "src": "192:17:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3742,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "192:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3745,
+                  "mutability": "mutable",
+                  "name": "deepBurned",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3749,
+                  "src": "211:18:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3744,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "211:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3747,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceX96",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3749,
+                  "src": "231:20:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 3746,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "231:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "191:61:9"
+            },
+            "scope": 3765,
+            "src": "102:151:9",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "c3acad36",
+            "id": 3764,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLimitTokensCode",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3758,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3751,
+                  "mutability": "mutable",
+                  "name": "tick",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3764,
+                  "src": "288:10:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3750,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "288:5:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3753,
+                  "mutability": "mutable",
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3764,
+                  "src": "300:12:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3752,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:7:9",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3755,
+                  "mutability": "mutable",
+                  "name": "share",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3764,
+                  "src": "314:13:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3754,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "314:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3757,
+                  "mutability": "mutable",
+                  "name": "isSellShare",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3764,
+                  "src": "329:16:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3756,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "329:4:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "287:59:9"
+            },
+            "returnParameters": {
+              "id": 3763,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3760,
+                  "mutability": "mutable",
+                  "name": "token0Out",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3764,
+                  "src": "369:17:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3759,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "369:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3762,
+                  "mutability": "mutable",
+                  "name": "token1Out",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3764,
+                  "src": "388:17:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3761,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "388:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "368:38:9"
+            },
+            "scope": 3765,
+            "src": "259:148:9",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3766,
+        "src": "65:345:9"
+      }
+    ],
+    "src": "37:375:9"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/E/UBL/viswap/contracts/interfaces/ILimitswapTradeCore.sol",
+      "exportedSymbols": {
+        "ILimitswapTradeCore": [
+          3765
+        ]
+      },
+      "license": "GPL 2.0"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 3734,
+        "name": "PragmaDirective",
+        "src": "37:24:9"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            3765
+          ],
+          "name": "ILimitswapTradeCore",
+          "scope": 3766
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "02ea5e1f",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "tradeStartGate",
+              "scope": 3765,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amountIn",
+                      "scope": 3749,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3735,
+                        "name": "ElementaryTypeName",
+                        "src": "126:7:9"
+                      }
+                    ],
+                    "id": 3736,
+                    "name": "VariableDeclaration",
+                    "src": "126:16:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "buyside",
+                      "scope": 3749,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 3737,
+                        "name": "ElementaryTypeName",
+                        "src": "144:4:9"
+                      }
+                    ],
+                    "id": 3738,
+                    "name": "VariableDeclaration",
+                    "src": "144:12:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "stopTick",
+                      "scope": 3749,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3739,
+                        "name": "ElementaryTypeName",
+                        "src": "158:5:9"
+                      }
+                    ],
+                    "id": 3740,
+                    "name": "VariableDeclaration",
+                    "src": "158:14:9"
+                  }
+                ],
+                "id": 3741,
+                "name": "ParameterList",
+                "src": "125:48:9"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amountOut",
+                      "scope": 3749,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3742,
+                        "name": "ElementaryTypeName",
+                        "src": "192:7:9"
+                      }
+                    ],
+                    "id": 3743,
+                    "name": "VariableDeclaration",
+                    "src": "192:17:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "deepBurned",
+                      "scope": 3749,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3744,
+                        "name": "ElementaryTypeName",
+                        "src": "211:7:9"
+                      }
+                    ],
+                    "id": 3745,
+                    "name": "VariableDeclaration",
+                    "src": "211:18:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPriceX96",
+                      "scope": 3749,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 3746,
+                        "name": "ElementaryTypeName",
+                        "src": "231:7:9"
+                      }
+                    ],
+                    "id": 3747,
+                    "name": "VariableDeclaration",
+                    "src": "231:20:9"
+                  }
+                ],
+                "id": 3748,
+                "name": "ParameterList",
+                "src": "191:61:9"
+              }
+            ],
+            "id": 3749,
+            "name": "FunctionDefinition",
+            "src": "102:151:9"
+          },
+          {
+            "attributes": {
+              "functionSelector": "c3acad36",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getLimitTokensCode",
+              "scope": 3765,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tick",
+                      "scope": 3764,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3750,
+                        "name": "ElementaryTypeName",
+                        "src": "288:5:9"
+                      }
+                    ],
+                    "id": 3751,
+                    "name": "VariableDeclaration",
+                    "src": "288:10:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "user",
+                      "scope": 3764,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 3752,
+                        "name": "ElementaryTypeName",
+                        "src": "300:7:9"
+                      }
+                    ],
+                    "id": 3753,
+                    "name": "VariableDeclaration",
+                    "src": "300:12:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "share",
+                      "scope": 3764,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3754,
+                        "name": "ElementaryTypeName",
+                        "src": "314:7:9"
+                      }
+                    ],
+                    "id": 3755,
+                    "name": "VariableDeclaration",
+                    "src": "314:13:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "isSellShare",
+                      "scope": 3764,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 3756,
+                        "name": "ElementaryTypeName",
+                        "src": "329:4:9"
+                      }
+                    ],
+                    "id": 3757,
+                    "name": "VariableDeclaration",
+                    "src": "329:16:9"
+                  }
+                ],
+                "id": 3758,
+                "name": "ParameterList",
+                "src": "287:59:9"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "token0Out",
+                      "scope": 3764,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3759,
+                        "name": "ElementaryTypeName",
+                        "src": "369:7:9"
+                      }
+                    ],
+                    "id": 3760,
+                    "name": "VariableDeclaration",
+                    "src": "369:17:9"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "token1Out",
+                      "scope": 3764,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3761,
+                        "name": "ElementaryTypeName",
+                        "src": "388:7:9"
+                      }
+                    ],
+                    "id": 3762,
+                    "name": "VariableDeclaration",
+                    "src": "388:17:9"
+                  }
+                ],
+                "id": 3763,
+                "name": "ParameterList",
+                "src": "368:38:9"
+              }
+            ],
+            "id": 3764,
+            "name": "FunctionDefinition",
+            "src": "259:148:9"
+          }
+        ],
+        "id": 3765,
+        "name": "ContractDefinition",
+        "src": "65:345:9"
+      }
+    ],
+    "id": 3766,
+    "name": "SourceUnit",
+    "src": "37:375:9"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-06-16T07:50:10.735Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
