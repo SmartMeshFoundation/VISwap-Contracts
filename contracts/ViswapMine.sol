@@ -40,7 +40,7 @@ contract ViswapMine is Ownable {
         uint256 accMinedPerShare; // Accumulated tokens per share, times 1e12. See below.
     }
     // The LimitSwap TOKEN!
-    ViswapToken public immutable limitswapToken;
+    ViswapToken public immutable viswapToken;
     // Viswap Token mined per block.
     uint256 public minedPerBlock;
     // Mining will stop when reached max amount
@@ -63,12 +63,12 @@ contract ViswapMine is Ownable {
     );
 
     constructor(
-        ViswapToken _limitswapToken,
+        ViswapToken _viswapToken,
         uint256 _minedPerBlock,
         uint256 _startBlock,
         uint256 _maxSupply
     ) {
-        limitswapToken = _limitswapToken;
+        viswapToken = _viswapToken;
         minedPerBlock = _minedPerBlock;
         startBlock = _startBlock;
         maxSupply = _maxSupply;
@@ -145,7 +145,7 @@ contract ViswapMine is Ownable {
         }
         _pending = user.amount.mul(accMinedPerShare).div(1e12).sub(user.rewardDebt);
         if (maxSupply > 0){
-            if(limitswapToken.totalSupply().add(_pending) > maxSupply) _pending = limitswapToken.totalSupply().sub(maxSupply);
+            if(viswapToken.totalSupply().add(_pending) > maxSupply) _pending = viswapToken.totalSupply().sub(maxSupply);
         }
     }
 
@@ -184,10 +184,10 @@ contract ViswapMine is Ownable {
                 .mul(pool.allocPoint)
                 .div(totalAllocPoint);
         if(maxSupply > 0) {
-            if(minedAmount > maxSupply.sub(limitswapToken.totalSupply())) minedAmount = maxSupply.sub(limitswapToken.totalSupply());
+            if(minedAmount > maxSupply.sub(viswapToken.totalSupply())) minedAmount = maxSupply.sub(viswapToken.totalSupply());
         }
         if(minedAmount > 0){
-            limitswapToken.mint(address(this), minedAmount);
+            viswapToken.mint(address(this), minedAmount);
             pool.accMinedPerShare = pool.accMinedPerShare.add(
                 minedAmount.mul(1e12).div(totalDeposit)
             );
@@ -271,9 +271,9 @@ contract ViswapMine is Ownable {
     // Safe limitswap token transfer function, just in case if rounding error causes pool to not have enough tokens.
     function safeTokenTransfer(address _to, uint256 _amount) internal {
         TransferHelper.safeTransfer(
-            address(limitswapToken),
+            address(viswapToken),
             _to,
-            Math.min(_amount, limitswapToken.balanceOf(address(this)))
+            Math.min(_amount, viswapToken.balanceOf(address(this)))
             );
     }
 }
