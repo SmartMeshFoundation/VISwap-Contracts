@@ -6,7 +6,7 @@ import "./libraries/Ownable.sol";
 import "./libraries/SafeMath.sol";
 
 
-contract ViswapToken is ERC20("ViSwap", "VIT"), Ownable {
+contract ViswapToken is ERC20("VISwap", "VIT"), Ownable {
     using SafeMath for uint256;
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mint(address _to, uint256 _amount) public onlyOwner {
