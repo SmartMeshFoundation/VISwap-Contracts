@@ -243,8 +243,7 @@ contract ViswapRouter {
     }
 
     function getPairInfo (address tokenA, address tokenB) public view
-        returns(int24 placeHodler0, uint160 placeHodler1, address pair, uint256 reserve0,
-        uint256 reserve1, uint256 placeHodler2, uint256 placeHodler3) {
+        returns(address pair, uint256 reserve0, uint256 reserve1) {
         (tokenA, tokenB) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
         pair = IViswapFactory(factory).getPair(tokenA, tokenB);
         if (pair != address(0)){
