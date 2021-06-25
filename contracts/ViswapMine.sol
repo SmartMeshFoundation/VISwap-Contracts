@@ -258,14 +258,14 @@ contract ViswapMine is Ownable {
     function emergencyWithdraw(uint256 _pid) public {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][msg.sender];
+        emit EmergencyWithdraw(msg.sender, _pid, user.amount);
+        user.amount = 0;
+        user.rewardDebt = 0;
         TransferHelper.safeTransfer(
             address(pool.depositToken),
             address(msg.sender),
             user.amount
         );
-        emit EmergencyWithdraw(msg.sender, _pid, user.amount);
-        user.amount = 0;
-        user.rewardDebt = 0;
     }
 
     // Safe VISwap token transfer function, just in case if rounding error causes pool to not have enough tokens.
