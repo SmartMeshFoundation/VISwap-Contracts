@@ -259,12 +259,13 @@ contract ViswapMine is Ownable {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][msg.sender];
         emit EmergencyWithdraw(msg.sender, _pid, user.amount);
+        uint256 _amount = user.amount;
         user.amount = 0;
         user.rewardDebt = 0;
         TransferHelper.safeTransfer(
             address(pool.depositToken),
             address(msg.sender),
-            user.amount
+            _amount
         );
     }
 
