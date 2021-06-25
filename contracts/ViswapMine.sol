@@ -133,20 +133,25 @@ contract ViswapMine is Ownable {
         UserInfo storage user = userInfo[_pid][_user];
         uint256 accMinedPerShare = pool.accMinedPerShare;
         uint256 totalDeposit = pool.depositToken.balanceOf(address(this));
+        uint256 minedAmount = 0;
         if (block.number > pool.lastRewardBlock && totalDeposit != 0) {
-            uint256 minedAmount =
+            minedAmount =
                 (block.number.sub(pool.lastRewardBlock))
                     .mul(minedPerBlock)
                     .mul(pool.allocPoint)
                     .div(totalAllocPoint);
+        }
+        if (maxSupply > 0){
+            if(minedAmount > maxSupply.sub(viswapToken.totalSupply())) minedAmount = maxSupply.sub(viswapToken.totalSupply());
+        }
+
+        if(minedAmount > 0){
             accMinedPerShare = accMinedPerShare.add(
                 minedAmount.mul(1e12).div(totalDeposit)
             );
         }
+
         _pending = user.amount.mul(accMinedPerShare).div(1e12).sub(user.rewardDebt);
-        if (maxSupply > 0){
-            if(viswapToken.totalSupply().add(_pending) > maxSupply) _pending = maxSupply.sub(viswapToken.totalSupply());
-        }
     }
 
     function pendingAllAmount(address _user)
