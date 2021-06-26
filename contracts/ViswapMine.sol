@@ -38,6 +38,7 @@ contract ViswapMine is Ownable {
         uint256 allocPoint; // How many allocation points assigned to this pool. tokens to distribute per block.
         uint256 lastRewardBlock; // Last block number that tokens distribution occurs.
         uint256 accMinedPerShare; // Accumulated tokens per share, times 1e12. See below.
+        uint256 totalAmount;        // Total amount of current pool deposit.
     }
     // The VISwap TOKEN!
     ViswapToken public immutable viswapToken;
@@ -97,7 +98,8 @@ contract ViswapMine is Ownable {
                 depositToken: _depositToken,
                 allocPoint: _allocPoint,
                 lastRewardBlock: lastRewardBlock,
-                accMinedPerShare: 0
+                accMinedPerShare: 0,
+                totalAmount: 0
             })
         );
     }
@@ -132,7 +134,7 @@ contract ViswapMine is Ownable {
         PoolInfo storage pool = poolInfo[_pid];
         UserInfo storage user = userInfo[_pid][_user];
         uint256 accMinedPerShare = pool.accMinedPerShare;
-        uint256 totalDeposit = pool.depositToken.balanceOf(address(this));
+        uint256 totalDeposit = pool.totalAmount;
         uint256 minedAmount = 0;
         if (block.number > pool.lastRewardBlock && totalDeposit != 0) {
             minedAmount =
@@ -178,7 +180,7 @@ contract ViswapMine is Ownable {
         if (block.number <= pool.lastRewardBlock) {
             return;
         }
-        uint256 totalDeposit = pool.depositToken.balanceOf(address(this));
+        uint256 totalDeposit = pool.totalAmount;
         if (totalDeposit == 0) {
             pool.lastRewardBlock = block.number;
             return;
@@ -240,6 +242,7 @@ contract ViswapMine is Ownable {
         );
         user.amount = user.amount.add(_amount);
         user.rewardDebt = user.amount.mul(pool.accMinedPerShare).div(1e12);
+        pool.totalAmount = pool.totalAmount.add(_amount);
         emit Deposit(msg.sender, _pid, _amount);
     }
 
@@ -251,6 +254,7 @@ contract ViswapMine is Ownable {
         _claim(_pid, msg.sender);
         user.amount = user.amount.sub(_amount);
         user.rewardDebt = user.amount.mul(pool.accMinedPerShare).div(1e12);
+        pool.totalAmount = pool.totalAmount.sub(_amount);
         TransferHelper.safeTransfer(
             address(pool.depositToken),
             address(msg.sender),
@@ -267,6 +271,7 @@ contract ViswapMine is Ownable {
         uint256 _amount = user.amount;
         user.amount = 0;
         user.rewardDebt = 0;
+        pool.totalAmount = pool.totalAmount.sub(_amount);
         TransferHelper.safeTransfer(
             address(pool.depositToken),
             address(msg.sender),
