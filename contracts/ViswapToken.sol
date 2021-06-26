@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: GPL-2.0
 pragma solidity =0.7.6;
 
-import "https://raw.githubusercontent.com/SmartMeshFoundation/VISwap-Contacts/main/contracts/libraries/ERC20.sol";
-import "https://raw.githubusercontent.com/SmartMeshFoundation/VISwap-Contacts/main/contracts/libraries/Ownable.sol";
-import "https://raw.githubusercontent.com/SmartMeshFoundation/VISwap-Contacts/main/contracts/libraries/SafeMath.sol";
+import "./libraries/ERC20.sol";
+import "./libraries/Ownable.sol";
+import "./libraries/SafeMath.sol";
 
 
 contract ViswapToken is ERC20, Ownable {
