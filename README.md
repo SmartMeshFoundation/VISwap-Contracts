@@ -11,6 +11,6 @@ Router:             https://hecoinfo.com/address/0x3bae103E967E1DbE15A346c4022D3
 
 Miner:              https://hecoinfo.com/address/0x8800892cE5849C42560D06F6d2b52994F981470B#code
 
-VITToken:            https://hecoinfo.com/address/0x381A519d9962f51a13C85Af74cc7F5dC2d844200#code
+VITToken:           https://hecoinfo.com/address/0x381A519d9962f51a13C85Af74cc7F5dC2d844200#code
 
 
